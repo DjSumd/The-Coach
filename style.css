@@ -282,3 +282,10 @@ nav.tabs svg{width:22px;height:22px}
 .padmini .q{border-bottom:1px solid var(--line)} .padmini .g{border-top:1px solid var(--line)}
 .padmini .c{padding:6px 10px;line-height:1.7;color:var(--ink2)} .padmini .c+.c{border-left:2px solid color-mix(in srgb,var(--ox) 35%,transparent)}
 .padmini .c b{display:block;font-size:.6rem;letter-spacing:.14em;color:var(--ink3)}
+
+details.exd>summary{list-style:none;cursor:pointer;position:relative;padding-right:28px}
+details.exd>summary::-webkit-details-marker{display:none}
+details.exd>summary::after{content:"";position:absolute;right:4px;top:8px;width:9px;height:9px;border-right:2px solid var(--ink3);border-bottom:2px solid var(--ink3);transform:rotate(45deg);transition:transform .2s}
+details.exd[open]>summary::after{transform:rotate(-135deg);top:12px}
+details.exd[open]>summary{padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:4px}
+details summary{cursor:pointer}
