@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>The Coach</title>
 <meta name="description" content="Public speaking, taught and drilled: voice, train of thought, words, body and tone.">
-<meta name="theme-color" content="#16151a">
+<meta name="theme-color" content="#f6f1e8">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Coach">
@@ -15,133 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#16151a; --bg2:#1d1b22; --panel:#211f26; --panel2:#2a2730; --line:#34303b;
-  --ink:#ece6da; --ink2:#b9b2a6; --ink3:#8a847a;
-  --ox:#8a2a38; --ox2:#a4384a; --oxsoft:rgba(138,42,56,.18);
-  --brass:#c39a55; --brass2:#dcb56e; --brasssoft:rgba(195,154,85,.14);
-  --good:#7fae78; --warn:#d9a84e; --bad:#d26a72;
-  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif; --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --safe-b:env(safe-area-inset-bottom,0px); --fs:1.3rem;
-}
-:root[data-theme="light"]{ --bg:#f4efe6; --bg2:#ece6da; --panel:#fbf8f2; --panel2:#f1ece2; --line:#ddd5c6; --ink:#1e1b1a; --ink2:#5a544d; --ink3:#8c857b; --ox:#6e1f2b; --ox2:#8a2a38; --oxsoft:rgba(110,31,43,.08); --brass:#9a7640; --brass2:#8a6a36; --brasssoft:rgba(154,118,64,.12); --good:#4f7f4a; --warn:#a07420; --bad:#a8434c; }
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
-body{min-height:100vh;padding-bottom:calc(86px + var(--safe-b))}
-h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;letter-spacing:.005em}
-h1{font-size:2.2rem;line-height:1.05} h2{font-size:1.65rem;line-height:1.12} h3{font-size:1.25rem}
-p{margin:0 0 .8em}
-button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
-header.top{padding:calc(14px + env(safe-area-inset-top,0px)) 18px 4px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
-header.top .brand{font-family:var(--serif);font-size:1.3rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
-header.top .right{display:flex;gap:14px;align-items:center;color:var(--ink3);font-size:.78rem}
-header.top .right button{color:var(--ink3);display:flex}
-header.top svg{width:20px;height:20px}
-main{padding:10px 16px 20px;max-width:680px;margin:0 auto}
-.eyebrow{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:600;margin-bottom:6px}
-.sub{color:var(--ink2);font-size:.95rem} .note{color:var(--ink3);font-size:.84rem}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;margin:12px 0;position:relative}
-.card.tap{cursor:pointer} .card.tap:active{background:var(--panel2)}
-.card.ox{border-color:rgba(138,42,56,.45);background:linear-gradient(180deg,var(--oxsoft),var(--panel) 70%)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px 14px;border-radius:12px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);font-size:.9rem;font-weight:500;min-height:44px}
-.btn:active{transform:translateY(1px)}
-.btn.primary{background:var(--ox);border-color:var(--ox2);color:#f8f2ea}
-.btn.brass{background:var(--brasssoft);border-color:rgba(195,154,85,.5);color:var(--brass2)}
-.btn.ghost{background:transparent;border-color:transparent;color:var(--ink2)}
-.btn.on{background:var(--brass);border-color:var(--brass);color:#1a1510}
-.btn.small{padding:6px 10px;min-height:34px;font-size:.8rem}
-.btn.big{min-height:58px;font-size:1.05rem;padding:12px 22px;border-radius:16px}
-.btn.wide{width:100%}
-.btn svg{width:18px;height:18px;flex:none}
-.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.spread{justify-content:space-between}
-.pills{display:flex;gap:8px;overflow-x:auto;padding:4px 16px 10px;scrollbar-width:none;margin:0 -16px}
-.pills::-webkit-scrollbar{display:none}
-.pill{flex:none;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:var(--panel);font-size:.82rem;color:var(--ink2);white-space:nowrap}
-.pill.on{background:var(--brass);color:#1a1510;border-color:var(--brass);font-weight:600}
-.seg{display:flex;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:3px;margin:8px 0 14px}
-.seg button{flex:1;padding:9px 6px;border-radius:9px;font-size:.82rem;color:var(--ink2);font-weight:500}
-.seg button.on{background:var(--panel2);color:var(--ink)}
-.list .item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 2px;border-bottom:1px solid var(--line);cursor:pointer}
-.list .item:active{background:var(--panel2)}
-.list .item .t{font-family:var(--serif);font-size:1.2rem;line-height:1.2}
-.list .item .m{font-size:.78rem;color:var(--ink3);margin-top:2px}
-.list .item .arrow{color:var(--ink3);flex:none}
-.tick{width:22px;height:22px;border-radius:50%;border:2px solid var(--line);flex:none;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700}
-.tick.done{background:var(--brass);border-color:var(--brass);color:#1a1510}
-.tick.part{border-color:var(--brass);color:var(--brass)}
-.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.tile{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px 14px;cursor:pointer}
-.tile:active{background:var(--panel2)}
-.tile .t{font-family:var(--serif);font-size:1.28rem;line-height:1.15}
-.tile .n{font-size:.75rem;color:var(--ink3);margin-top:4px}
-.bar{height:6px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:8px}
-.bar>i{display:block;height:100%;background:var(--brass);border-radius:3px}
-.back{display:inline-flex;align-items:center;gap:6px;color:var(--ink2);font-size:.86rem;margin:2px 0 10px;padding:6px 0}
-.back svg{width:16px;height:16px}
-.lesson p{font-size:1.02rem;line-height:1.65;color:var(--ink)}
-.model{font-family:var(--serif);font-size:var(--fs);line-height:1.5;padding:16px 18px;border-left:3px solid var(--brass);background:var(--brasssoft);border-radius:0 14px 14px 0;margin:14px 0}
-.mistake{font-family:var(--serif);font-size:1.12rem;line-height:1.45;padding:12px 16px;border-left:3px solid var(--bad);background:rgba(210,106,114,.08);border-radius:0 14px 14px 0;margin:10px 0;color:var(--ink2)}
-.rules{margin:12px 0 0;padding:0;list-style:none}
-.rules li{padding:9px 0 9px 26px;border-bottom:1px solid var(--line);position:relative;font-weight:500}
-.rules li::before{content:"";position:absolute;left:4px;top:16px;width:10px;height:10px;border-radius:2px;background:var(--brass)}
-em.land{font-style:normal;color:var(--brass2);font-weight:600;border-bottom:2px solid var(--brass)}
-.br{color:var(--brass);opacity:.85;margin:0 .22em;font-weight:400}
-.cue{display:inline-block;font-family:var(--sans);font-size:.72em;font-style:normal;letter-spacing:.04em;color:var(--ink3);background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:1px 7px;margin:0 .2em;vertical-align:middle}
-.hold{color:var(--ox2);font-weight:700;margin:0 .3em;letter-spacing:-.12em}
-.prompt{font-family:var(--serif);font-size:1.6rem;line-height:1.3;margin:6px 0 10px}
-.prompt.long{font-size:var(--fs);line-height:1.5}
-.prompt.hidden{color:var(--ink3);font-style:italic}
-.scaffold{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
-.scaffold span{padding:6px 10px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);font-size:.82rem;font-weight:600;color:var(--ink2)}
-.scaffold span b{color:var(--brass2);margin-right:4px}
-.meter{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
-.meter div{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:9px 6px;text-align:center}
-.meter b{display:block;font-family:var(--serif);font-size:1.7rem;font-weight:500;line-height:1.1}
-.meter span{font-size:.64rem;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase}
-.meter .ok b{color:var(--good)} .meter .warn b{color:var(--warn)} .meter .bad b{color:var(--bad)}
-.level{height:8px;border-radius:4px;background:var(--line);overflow:hidden}
-.level i{display:block;height:100%;background:linear-gradient(90deg,var(--good),var(--brass));width:0;transition:width .05s}
-.clock{font-family:var(--serif);font-size:3rem;text-align:center;line-height:1;margin:8px 0}
-.clock small{font-size:1rem;color:var(--ink3);font-family:var(--sans)}
-.transcript{font-size:.92rem;color:var(--ink2);background:var(--bg2);border-radius:12px;padding:10px 12px;min-height:44px;max-height:140px;overflow:auto;margin:8px 0}
-.transcript .f{background:rgba(210,106,114,.25);color:var(--ink);border-radius:4px;padding:0 2px}
-.checks label{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:.95rem}
-.checks input{width:22px;height:22px;accent-color:var(--brass);flex:none;margin-top:1px}
-.orb{width:130px;height:130px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--brass2),var(--ox) 70%);margin:16px auto;transition:transform 1s linear;box-shadow:0 0 40px rgba(195,154,85,.2)}
-video.mirror{width:100%;max-height:52vh;object-fit:cover;border-radius:16px;transform:scaleX(-1);background:#000;display:block}
-.dots{display:flex;gap:6px;justify-content:center;margin:6px 0 10px}
-.dots i{width:8px;height:8px;border-radius:50%;background:var(--line)} .dots i.on{background:var(--brass)} .dots i.done{background:var(--ink3)}
-.stat{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
-.stat div{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
-.stat b{display:block;font-family:var(--serif);font-size:1.6rem;font-weight:500;color:var(--brass2)}
-.stat span{font-size:.66rem;color:var(--ink3);letter-spacing:.08em;text-transform:uppercase}
-.spark{display:flex;align-items:flex-end;gap:3px;height:56px;margin:8px 0}
-.spark i{flex:1;background:var(--brass);border-radius:2px 2px 0 0;min-height:2px;opacity:.85}
-.empty{text-align:center;padding:28px 12px;color:var(--ink3)}
-.empty strong{display:block;font-family:var(--serif);font-size:1.4rem;color:var(--ink2);margin-bottom:6px;font-weight:500}
-.step{display:flex;gap:12px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:14px;margin:8px 0;background:var(--panel);cursor:pointer}
-.step .num{font-family:var(--serif);font-size:1.5rem;color:var(--brass);width:26px;text-align:center;flex:none}
-.step .t{font-family:var(--serif);font-size:1.2rem;line-height:1.2}
-.step .m{font-size:.78rem;color:var(--ink3)}
-.step.done{opacity:.6}
-.step.done .num{color:var(--ink3)}
-.storytext p{font-family:var(--serif);font-size:1.18rem;line-height:1.5;margin:0 0 .8em}
-.badge{display:inline-flex;min-width:18px;height:18px;border-radius:9px;background:var(--ox2);color:#fff;font-size:.68rem;font-weight:700;align-items:center;justify-content:center;padding:0 5px;margin-left:5px;vertical-align:middle}
-nav.tabs{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;padding:6px 4px calc(8px + var(--safe-b));z-index:20}
-nav.tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 2px;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);position:relative}
-nav.tabs button.on{color:var(--brass2)}
-nav.tabs svg{width:22px;height:22px}
-#toast{position:fixed;left:50%;bottom:calc(98px + var(--safe-b));transform:translateX(-50%) translateY(20px);background:var(--brass);color:#1a1510;padding:10px 16px;border-radius:12px;font-size:.88rem;font-weight:600;opacity:0;pointer-events:none;transition:all .25s;z-index:30;max-width:90vw;text-align:center}
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-hr.sep{border:0;border-top:1px solid var(--line);margin:18px 0}
-.fsctl{display:flex;gap:6px}
-.fsctl button{width:40px;height:36px;border-radius:9px;border:1px solid var(--line);background:var(--panel);font-family:var(--serif)}
-.toggle{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
-.toggle input{width:22px;height:22px;accent-color:var(--brass)}
-@media(min-width:600px){.tiles{grid-template-columns:repeat(3,1fr)}}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="top"><div class="brand">The Coach</div><div class="right"><span id="hdrDate"></span><button data-go="settings" aria-label="Settings"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button></div></header>
@@ -179,12 +53,13 @@ const STRUCTURES = {
 const DAY=86400000; const dayNum=()=>Math.floor((Date.now()-new Date().getTimezoneOffset()*60000)/DAY);
 function lsGet(k,d){ try{ const v=JSON.parse(localStorage.getItem(k)||"null"); return v===null?d:v; }catch(e){ return d; } }
 let warned=false; function lsSet(k,v){ try{ localStorage.setItem(k,JSON.stringify(v)); return true; }catch(e){ if(!warned){ warned=true; toast("Storage is full. Make a backup."); } return false; } }
-let S = lsGet("coach-state",{read:{},drills:{},applied:{},days:[],theme:"dark",fs:1.3,record:true,transcript:true,meterOn:true,sessions:{}});
+let S = lsGet("coach-state",{read:{},drills:{},applied:{},days:[],theme:"light",fs:1.3,record:true,transcript:true,meterOn:true,sessions:{}});
 let A = lsGet("coach-attempts",[]); // {id,t,day,kind,unit,drill,label,metrics,checks:[bool],nChecks}
 function persist(){ if(A.length>3000) A=A.slice(-3000); lsSet("coach-state",S); lsSet("coach-attempts",A); }
 for(const k of ["read","drills","applied","sessions"]) if(!S[k]||typeof S[k]!=="object") S[k]={};
 if(!Array.isArray(S.days)) S.days=[];
-function applyTheme(){ document.documentElement.dataset.theme=S.theme==="light"?"light":"dark"; document.documentElement.style.setProperty("--fs",(S.fs||1.3)+"rem"); document.querySelector('meta[name="theme-color"]').content=S.theme==="light"?"#f4efe6":"#16151a"; }
+function applyTheme(){ document.documentElement.dataset.theme=S.theme==="light"?"light":"dark"; document.documentElement.style.setProperty("--fs",(S.fs||1.3)+"rem"); document.querySelector('meta[name="theme-color"]').content=S.theme==="light"?"#f6f1e8":"#17161a"; }
+if(!S.uiV4){ S.theme="light"; S.uiV4=true; }
 applyTheme();
 const unitDone=id=>{ const u=UNITS[id]; if(!u) return false; return !!S.read[id] && (u.drills||[]).every(d=>S.drills[d.id]) && !!S.applied[id]; };
 const unitProgress=id=>{ const u=UNITS[id]; if(!u) return 0; const total=(u.drills||[]).length+2; let n=(S.read[id]?1:0)+(S.applied[id]?1:0); (u.drills||[]).forEach(d=>{ if(S.drills[d.id]) n++; }); return n/total; };
@@ -369,11 +244,12 @@ function vRun(){
       <div class="row" style="margin-top:8px">${d.said?hearBtn(d.said):d.type!=="breath"&&d.type!=="mirror"?hearBtn(d.type==="swap"?swapParts[1]||item:(d.type==="recall"?String(item).replace(/ \/ /g,". "):item)):""}${n>1?`<button class="btn small ghost" data-skip>Skip</button>`:""}</div>`;
   } else if(R.phase==="prep"){
     body=`<div class="card">${d.type==="retell"?`<div class="prompt">${esc(d.material.title)}</div><div class="note">${esc(d.material.who)} · ${esc(d.material.when)}</div>`:itemHtml()}${d.structure?scaffoldHtml(d.structure):""}</div>
-      <div class="clock" id="prepclock">${R.prepLeft}<small> s to think</small></div>
+      ${typeof runPrep==="function"?runPrep(d):""}<div class="clock" id="prepclock">${R.prepLeft}<small> s to think</small></div>
       <button class="btn primary big wide" data-phase="live">${I.mic} Start now</button>`;
   } else if(R.phase==="live"){
     if(d.type==="mirror") body=`<video id="cam" class="mirror" playsinline muted autoplay></video><div class="card"><div class="prompt" style="font-size:1.25rem">${mark(item)}</div></div><div class="clock" id="clock"></div><div id="meterbox">${S.meterOn?meterHtml(R.snap||{},d,true):""}</div><button class="btn primary big wide" data-stop>${I.stop} Done</button>`;
     else body=`<div class="card">${d.type==="retell"?`<div class="prompt">${esc(d.material.title)}</div>`:itemHtml()}${d.structure?scaffoldHtml(d.structure):""}${d.type==="hold"?`<div class="row spread" style="margin-top:8px"><span class="note">Silence now</span><span id="holdsec" style="font-family:var(--serif);font-size:1.8rem">0.0s</span><span class="note">target ${d.hold||2}s</span></div>`:""}</div>
+      ${typeof runLive==="function"?runLive(d):""}
       <div class="clock" id="clock">0:00</div>
       <div id="meterbox">${S.meterOn?meterHtml(R.snap||{},d,true):""}</div>
       <button class="btn primary big wide" data-stop>${I.stop} Stop</button>`;
@@ -515,7 +391,7 @@ function vSettings(){
       <label class="toggle"><span>Transcript<br><span class="note">Pace and fillers. Uses Chrome's speech recognition, which sends audio to Google while you speak. ${Meter.canTranscript?"Available on this browser.":"Not available on this browser."}</span></span><input type="checkbox" data-set="transcript" ${S.transcript?"checked":""}></label>
       <label class="toggle"><span>Keep takes<br><span class="note">Recordings stay on this phone only.</span></span><input type="checkbox" data-set="record" ${S.record?"checked":""}></label>
       <p class="note" style="margin-top:8px">If the transcript stops working while recording is on, turn Keep takes off for transcript drills; some phones won't share the microphone between the two.</p></div>
-    <div class="card"><div class="eyebrow">Reading</div><div class="row spread"><span>Theme</span><div class="row"><button class="btn small ${S.theme!=="light"?"on":""}" data-theme="dark">Charcoal</button><button class="btn small ${S.theme==="light"?"on":""}" data-theme="light">Paper</button></div></div><div class="row spread" style="margin-top:12px"><span>Model text size</span><div class="fsctl"><button data-fs="-">A</button><button data-fs="+" style="font-size:1.3rem">A</button></div></div></div>
+    <div class="card"><div class="eyebrow">Reading</div><div class="row spread"><span>Theme</span><div class="row"><button class="btn small ${S.theme!=="light"?"on":""}" data-settheme="dark">Charcoal</button><button class="btn small ${S.theme==="light"?"on":""}" data-settheme="light">Paper</button></div></div><div class="row spread" style="margin-top:12px"><span>Model text size</span><div class="fsctl"><button data-fs="-">A</button><button data-fs="+" style="font-size:1.3rem">A</button></div></div></div>
     <div class="card"><div class="eyebrow">Backup</div><p class="sub">Course progress, marks and meter numbers live on this phone. Recordings are not in the backup.</p><div class="row"><button class="btn brass" data-export>${I.down} Full backup</button><button class="btn" data-restore>${I.up} Restore</button></div></div>
     <div class="card"><div class="eyebrow">About</div><p class="sub">${STRANDS.length} strands, ${ORDER.length} units, ${Object.keys(DRILLS).length} drills, each taught, drilled and applied to material from The Brief, The Room, The Register, The Floor and The Lectern.</p></div>`;
 }
@@ -541,7 +417,7 @@ function startPrep(){
   clearInterval(prepT); prepT=setInterval(()=>{ if(!R||R.phase!=="prep"){ clearInterval(prepT); return; } R.prepLeft--; const c=document.getElementById("prepclock"); if(c) c.innerHTML=`${R.prepLeft}<small> s to think</small>`; if(R.prepLeft<=0){ clearInterval(prepT); goLive(); } },1000);
 }
 document.addEventListener("click",async e=>{
-  const b=e.target.closest("[data-go],[data-step],[data-unit],[data-back],[data-read],[data-drill],[data-applyunit],[data-gym],[data-phase],[data-stop],[data-save],[data-again],[data-discard],[data-skip],[data-quit],[data-endbreath],[data-say],[data-psec],[data-play],[data-deltake],[data-theme],[data-fs],[data-export],[data-restore]");
+  const b=e.target.closest("[data-go],[data-step],[data-unit],[data-back],[data-read],[data-drill],[data-applyunit],[data-gym],[data-phase],[data-stop],[data-save],[data-again],[data-discard],[data-skip],[data-quit],[data-endbreath],[data-say],[data-psec],[data-play],[data-deltake],[data-settheme],[data-fs],[data-export],[data-restore]");
   if(!b) return; const d=b.dataset;
   if(d.go!==undefined){ if(tab==="run"&&R){ if(R.phase==="live"||R.phase==="prep"){ if(!confirmLeave()) return; } stopAll(); R=null; } tab=d.go; view=null; render(); scrollTo(0,0); return; }
   if(d.step!==undefined){ const s=sessionPlan().find(x=>x.key===d.step); if(!s) return; const from={tab:"today",session:s.key};
@@ -567,7 +443,7 @@ document.addEventListener("click",async e=>{
   if(d.psec!==undefined){ progressSec=d.psec; render(); return; }
   if(d.play!==undefined){ const t=await getTake(d.play); const el=document.getElementById("pl-"+d.play); if(t&&el){ el.innerHTML=`<audio controls autoplay src="${URL.createObjectURL(t.blob)}" style="width:100%;margin-top:6px"></audio>`; } else toast("That take is gone"); return; }
   if(d.deltake!==undefined){ await delTake(d.deltake); const a=A.find(x=>x.id===d.deltake); if(a) a.take=false; persist(); render(); return; }
-  if(d.theme!==undefined){ S.theme=d.theme; persist(); applyTheme(); render(); return; }
+  if(d.settheme!==undefined){ S.theme=d.settheme; persist(); applyTheme(); render(); return; }
   if(d.fs!==undefined){ S.fs=Math.max(1.05,Math.min(1.8,+((S.fs||1.3)+(d.fs==="+"?.1:-.1)).toFixed(2))); persist(); applyTheme(); return; }
   if(d.export!==undefined){ exportBackup(); return; }
   if(d.restore!==undefined){ document.getElementById("restoreFile").click(); return; }
@@ -584,5 +460,7 @@ if("serviceWorker" in navigator){ addEventListener("load",()=>{ navigator.servic
 render();
 </script>
 <script src="app2.js"></script>
+<script src="app3.js"></script>
+<script src="app4.js"></script>
 </body>
 </html>
