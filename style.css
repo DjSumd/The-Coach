@@ -289,3 +289,6 @@ details.exd>summary::after{content:"";position:absolute;right:4px;top:8px;width:
 details.exd[open]>summary::after{transform:rotate(-135deg);top:12px}
 details.exd[open]>summary{padding-bottom:6px;border-bottom:1px solid var(--line);margin-bottom:4px}
 details summary{cursor:pointer}
+
+.seg button{flex:1 1 auto;padding:9px 8px}
+@media(max-width:380px){.seg button{font-size:.78rem;padding:9px 6px}}
