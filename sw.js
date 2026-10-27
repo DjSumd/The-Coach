@@ -1,11 +1,11 @@
 // The Coach service worker. Change VERSION whenever any file changes so phones pick up the update.
-const VERSION = "coach-v1";
+const VERSION = "coach-v2";
 const CACHE = VERSION;
 const CORE = [
   "./", "index.html", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "icons/apple-touch-icon.png", "icons/favicon-64.png",
-  "curriculum.js", "material.js", "meter.js"
+  "content.js", "curriculum.js", "material.js", "meter.js", "app2.js"
 ];
 
 self.addEventListener("install", e => {

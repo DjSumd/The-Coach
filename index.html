@@ -150,6 +150,7 @@ hr.sep{border:0;border-top:1px solid var(--line);margin:18px 0}
 <div id="toast"></div>
 <input type="file" id="restoreFile" accept=".json,application/json" hidden>
 
+<script src="content.js"></script>
 <script src="curriculum.js"></script>
 <script src="material.js"></script>
 <script src="meter.js"></script>
@@ -289,6 +290,7 @@ function saveAttempt(){
   if(d.unit&&!d.gym){ if(d.apply) S.applied[d.unit]=true; else S.drills[d.id]=(S.drills[d.id]||0)+1; }
   const day=dayNum(); if(!S.days.includes(day)) S.days.push(day);
   if(R.from&&R.from.session){ const ss=S.sessions[day]=S.sessions[day]||{}; ss[R.from.session]=true; }
+  if(typeof d.onSave==="function"){ try{ d.onSave(R); }catch(e){} }
   persist(); R.attemptsThisRun++;
 }
 function nextItem(again){
@@ -344,8 +346,8 @@ function vRun(){
   if(!R) return vToday();
   const d=R.drill, item=R.items[R.idx]||"", n=R.items.length;
   const head=`<button class="back" data-quit>${I.back} ${R.from&&R.from.session?"Session":"Back"}</button>
-    <div class="eyebrow">${esc(d.apply?"Apply":d.gym?"Gym":(UNITS[d.unit]?UNITS[d.unit].strand+" · "+UNITS[d.unit].title:"Drill"))}</div>
-    <h2>${esc(d.title||"")}</h2>${d.how?`<p class="sub" style="margin-top:6px">${esc(d.how)}</p>`:""}
+    <div class="eyebrow">${esc(d.label?d.label:d.apply?"Apply":d.gym?"Gym":(UNITS[d.unit]?UNITS[d.unit].strand+" · "+UNITS[d.unit].title:"Drill"))}</div>
+    <h2>${esc(d.title||"")}</h2>${d.how?`<p class="sub" style="margin-top:6px">${esc(d.how)}</p>`:""}${typeof runTop==="function"?runTop(d,R.phase):""}
     ${n>1?`<div class="dots">${R.items.map((_,i)=>`<i class="${i===R.idx?"on":i<R.idx?"done":""}"></i>`).join("")}</div>`:""}`;
   let body="";
   const swapParts=String(item).split("=>").map(x=>x.trim());
@@ -364,7 +366,7 @@ function vRun(){
     body=`<div class="card">${itemHtml()}${extra}${d.structure?scaffoldHtml(d.structure):""}</div>
       <p class="note">${esc(plan)}</p>
       <div class="row">${d.type==="breath"?`<button class="btn primary big wide" data-phase="breath">Begin</button>`: d.type==="mirror"?`<button class="btn primary big wide" data-phase="mirror">Start</button>`: (d.type==="impromptu"||d.type==="recall")?`<button class="btn primary big wide" data-phase="prep">${I.mic} Start ${d.prep||10}s prep</button>`:`<button class="btn primary big wide" data-phase="live">${I.mic} Start</button>`}</div>
-      <div class="row" style="margin-top:8px">${d.type!=="breath"&&d.type!=="mirror"?hearBtn(d.type==="swap"?swapParts[1]||item:(d.type==="recall"?String(item).replace(/ \/ /g,". "):item)):""}${n>1?`<button class="btn small ghost" data-skip>Skip</button>`:""}</div>`;
+      <div class="row" style="margin-top:8px">${d.said?hearBtn(d.said):d.type!=="breath"&&d.type!=="mirror"?hearBtn(d.type==="swap"?swapParts[1]||item:(d.type==="recall"?String(item).replace(/ \/ /g,". "):item)):""}${n>1?`<button class="btn small ghost" data-skip>Skip</button>`:""}</div>`;
   } else if(R.phase==="prep"){
     body=`<div class="card">${d.type==="retell"?`<div class="prompt">${esc(d.material.title)}</div><div class="note">${esc(d.material.who)} · ${esc(d.material.when)}</div>`:itemHtml()}${d.structure?scaffoldHtml(d.structure):""}</div>
       <div class="clock" id="prepclock">${R.prepLeft}<small> s to think</small></div>
@@ -379,7 +381,7 @@ function vRun(){
     body=`<div class="card center" style="text-align:center">${itemHtml()}<div class="orb" id="orb"></div><div class="prompt" id="bph" style="text-align:center">Breathe in</div><div class="note" id="bct" style="text-align:center"></div></div><button class="btn ghost wide" data-endbreath>Finish</button>`;
   } else if(R.phase==="review"){
     const r=R.result;
-    body=`${d.type==="recall"?`<div class="card"><div class="eyebrow">The anchors</div>${itemHtml()}</div>`:""}
+    body=`${typeof runReview==="function"?runReview(d):""}${d.type==="recall"?`<div class="card"><div class="eyebrow">The anchors</div>${itemHtml()}</div>`:""}
       ${d.model&&d.apply?`<div class="card"><div class="eyebrow">One strong answer</div><div class="model">${mark(d.model)}</div></div>`:""}
       <div class="card"><div class="row spread"><div class="eyebrow">How it went</div><span class="note">${fmt(R.elapsed||0)}</span></div>
       ${r?meterHtml(r,d,false):`<p class="note">${d.type==="breath"?"No audio on this one. Mark it honestly.":"No meter on this attempt."}</p>`}
@@ -581,5 +583,6 @@ document.addEventListener("visibilitychange",()=>{ if(document.hidden&&R&&R.phas
 if("serviceWorker" in navigator){ addEventListener("load",()=>{ navigator.serviceWorker.register("sw.js").catch(()=>{}); }); }
 render();
 </script>
+<script src="app2.js"></script>
 </body>
 </html>
