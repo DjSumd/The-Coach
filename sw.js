@@ -1,11 +1,14 @@
 // The Coach service worker. Change VERSION whenever any file changes so phones pick up the update.
-const VERSION = "coach-v7";
+const VERSION = "coach-v8";
 const CACHE = VERSION;
 const CORE = [
   "./", "index.html", "manifest.webmanifest",
   "icons/icon-192.png", "icons/icon-512.png", "icons/icon-maskable-512.png",
   "icons/apple-touch-icon.png", "icons/favicon-64.png",
-  "content.js", "curriculum.js", "material.js", "meter.js", "app2.js", "app3.js", "app4.js", "app5.js", "app6.js", "app7.js", "style.css"
+  "content.js", "curriculum.js", "material.js", "meter.js", "app2.js", "app3.js", "app4.js", "app5.js", "app6.js", "app7.js", "app8.js", "style.css",
+  "fonts/cormorant-garamond-latin-400-normal.woff2", "fonts/cormorant-garamond-latin-500-normal.woff2", "fonts/cormorant-garamond-latin-600-normal.woff2",
+  "fonts/cormorant-garamond-latin-400-italic.woff2", "fonts/cormorant-garamond-latin-500-italic.woff2",
+  "fonts/inter-latin-400-normal.woff2", "fonts/inter-latin-500-normal.woff2", "fonts/inter-latin-600-normal.woff2", "fonts/inter-latin-700-normal.woff2"
 ];
 
 self.addEventListener("install", e => {

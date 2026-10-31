@@ -24,6 +24,9 @@ Every formula of the greats (24), the committee scaffold, and each of the 10 not
 ## Your real SCSA committee
 Anything set in your real Curriculum Advisory Committee uses fill-in chips such as [the Board's first reason] and [your fix for it] instead of invented reasons. Fill them in aloud from your own notes.
 
+## Rooms, moves, blind mode, skipping ahead
+The 40 committee rooms are grouped (SCSA, university, boards, school, funding bodies, networks) and collapsed, with the next unfinished room on top. The 38 moves are collapsed by family. **Blind mode** (a switch above the rooms) hides the notes that hand you the proposal: you build it from the briefing alone, and the notes appear in the review beside the model. On any ladder that is still at Study or Say, "I know this one: skip to Spot" opens level 3. Fonts are now in the bundle, so the installed app looks the same offline.
+
 ## Backup and the back button
 Backup and Restore now carry everything: drafts, debriefs, meeting pads, your phrases, Words reviews, ladders and progress. The phone's back button steps back through screens. Leaving a take part-way asks first. The app keeps your 150 most recent recordings.
 
@@ -31,7 +34,7 @@ Backup and Restore now carry everything: drafts, debriefs, meeting pads, your ph
 Pauses and rising or falling phrase ends are measured on the phone. Words per minute, fillers and the transcript use Chrome's speech recognition, which sends audio to Google; switch it off in Settings. Recordings stay on the phone. The meeting voices use the phone's own text-to-speech voices; if there are none, the words are shown instead.
 
 ## Publish
-Replace the files in the `the-coach` repo with everything in this folder, `index.html` at the top level: `index.html`, `style.css`, `app2.js`, `app3.js`, `app4.js`, `app5.js`, `app6.js`, `app7.js`, `content.js`, `curriculum.js`, `material.js`, `meter.js`, `manifest.webmanifest`, `sw.js`, `icons/`, this README. Installed copies update themselves.
+Replace the files in the `the-coach` repo with everything in this folder, `index.html` at the top level: `index.html`, `style.css`, `app2.js`, `app3.js`, `app4.js`, `app5.js`, `app6.js`, `app7.js`, `app8.js`, `content.js`, `curriculum.js`, `material.js`, `meter.js`, `manifest.webmanifest`, `sw.js`, `icons/`, `fonts/`, this README. Installed copies update themselves.
 
 ## Check before citing
 Worth a check before you quote them in a meeting: statute sections and thresholds, the WA privacy position, speech-rate ranges, and these from the greats: the date of Cicero's De Inventione (approximate), the Tilbury text (survives through a later letter), Ganz's use of Obama's 2004 keynote, Minto's biography, Burke's 1780 withdrawal, and the Johnson material (from Caro, described not quoted). Personal stories in examples are fill-in chips, e.g. [a moment from your own early teaching]. People, institutions and figures in scenarios, meetings and models are invented.

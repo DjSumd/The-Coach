@@ -1,3 +1,13 @@
+/* Self-hosted fonts so the installed app looks the same offline. */
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:400;font-display:swap;src:url(fonts/cormorant-garamond-latin-400-italic.woff2) format("woff2")}
+@font-face{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-display:swap;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/inter-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter";font-style:normal;font-weight:700;font-display:swap;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
 /* The Coach v4: paper theme, oxblood and brass, with a colour per module. */
 :root{
   --bg:#f6f1e8; --bg2:#eee6d8; --panel:#fffdf9; --panel2:#f6f0e6; --line:#e4d9c7; --line2:#d6c8b2;
@@ -23,7 +33,7 @@ b,strong{font-weight:600}
 button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
 
 /* header */
-header.top{position:sticky;top:0;z-index:15;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+header.top{position:sticky;top:0;z-index:15;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px;display:flex;align-items:center;justify-content:space-between;gap:12px;background:color-mix(in srgb,var(--bg) 97%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
 header.top.scrolled{border-bottom-color:var(--line)}
 header.top .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-size:1.18rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ox)}
 header.top .brand .mark{width:30px;height:30px;border-radius:9px;background:var(--ox);color:#f6efe2;display:flex;align-items:center;justify-content:center;font-size:1.05rem;letter-spacing:0}
@@ -156,7 +166,7 @@ video.mirror{width:100%;max-height:52vh;object-fit:cover;border-radius:16px;tran
 .badge{display:inline-flex;min-width:18px;height:18px;border-radius:9px;background:var(--ox2);color:#fff;font-size:.68rem;font-weight:700;align-items:center;justify-content:center;padding:0 5px;margin-left:5px;vertical-align:middle}
 
 /* bottom nav */
-nav.tabs{position:fixed;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--panel) 94%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;padding:6px 6px calc(8px + var(--safe-b));z-index:20;box-shadow:0 -4px 20px rgba(70,45,20,.05)}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);display:flex;padding:6px 6px calc(8px + var(--safe-b));z-index:20;box-shadow:0 -4px 20px rgba(70,45,20,.05)}
 nav.tabs button{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:4px 2px;font-size:.66rem;font-weight:600;letter-spacing:.02em;color:var(--ink3);position:relative}
 nav.tabs button .ic{width:52px;height:30px;border-radius:15px;display:flex;align-items:center;justify-content:center;transition:background .2s}
 nav.tabs button.on{color:var(--tc,var(--ox))}
